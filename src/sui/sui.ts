@@ -1,5 +1,5 @@
-import { getSdkEnv, SDK_ENV } from '../lib/sdk-env'
-import { getBasicToken } from '../lib/credentials'
+import { getSdkEnv, SDK_ENV } from '@/lib/sdk-env'
+import { getBasicToken } from '@/lib/credentials'
 
 export function getSuiApiUrl() {
   switch (getSdkEnv()) {
@@ -10,15 +10,4 @@ export function getSuiApiUrl() {
     case SDK_ENV.LOCAL:
       return 'http://localhost:8083'
   }
-}
-
-export async function getSuiAddress(sub: string): Promise<{address: string}> {
-  const response = await fetch(`${getSuiApiUrl()}/accounts/${sub}/address`, {
-    headers: {
-      Authorization: getBasicToken(),
-      'Content-Type': 'application/json',
-    }
-  })
-  const json = await response.json()
-  return json
 }

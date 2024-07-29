@@ -1,2 +1,2 @@
+export * from './evm'
 export * from './credenza-partner-sdk'
-export * from './evm/evm'
