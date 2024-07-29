@@ -9,7 +9,7 @@ async function run() {
   })
   // const address = await getEvmAddress('6581c0ce6a82d99c2356db66')
   // console.log(address)
-  const sig = await requestPassportIdSignature('6581c0ce6a82d99c2356db66')
+  const sig = await requestPassportIdSignature('6581c0ce6a82d99c2356db66', 'sign this message')
   console.log(sig)
   process.exit()
 }
