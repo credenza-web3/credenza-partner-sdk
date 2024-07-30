@@ -28,7 +28,7 @@
       "node": "./dist/evm/index.js",
       "types": "./dist/evm/index.d.ts"
     },
-    "./common": {
+    "./api": {
       "node": "./dist/common/index.js",
       "types": "./dist/common/index.d.ts"
     },

@@ -21,7 +21,9 @@ useAuth({
 
 ## MODULES
 
-[common](./src/common/README.md)
+[api](./src/api/README.md)
+
+[account](./src/account/README.md)
 
 [evm](./src/evm/README.md)
 
