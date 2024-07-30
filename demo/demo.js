@@ -1,7 +1,8 @@
 const { useAuth, useEnv, debug } = require('@credenza3/partner-sdk')
-//const { requestPassportIdSignature } = require('@credenza3/partner-sdk/common')
+//const { requestPassportIdSignature } = require('@credenza3/partner-sdk/api')
 //const { getSuiAddress } = require('@credenza3/partner-sdk/sui')
 //const { getAccountInfo } = require('@credenza3/partner-sdk/accounts')
+//const { addNfcId, removeNfcId, updateNfcId, getNfcId } = require('@credenza3/partner-sdk/api')
 
 async function run() {
   debug(true)
@@ -20,6 +21,9 @@ async function run() {
   // console.log(addr)
   // const acc = await getAccountInfo('6581c0ce6a82d99c2356db66')
   // console.log(acc)
+
+  //const nfcIdCreated = await getNfcId('123456789')
+  //console.log(nfcIdCreated)
   process.exit()
 }
 

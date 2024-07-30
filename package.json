@@ -16,8 +16,7 @@
     "test": "echo \"Error: no test specified\"",
     "prepare": "husky",
     "pre-commit-lint": "lint-staged",
-    "demo": "pnpm run build && cd ./demo && pnpm run start",
-    "demo:install": "cd ./demo && pnpm install"
+    "demo": "pnpm run build && cd ./demo && pnpm i && pnpm run start"
   },
   "exports": {
     "./sui": {
@@ -29,8 +28,8 @@
       "types": "./dist/evm/index.d.ts"
     },
     "./api": {
-      "node": "./dist/common/index.js",
-      "types": "./dist/common/index.d.ts"
+      "node": "./dist/api/index.js",
+      "types": "./dist/api/index.d.ts"
     },
     "./accounts": {
       "node": "./dist/accounts/index.js",

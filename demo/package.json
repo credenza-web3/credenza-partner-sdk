@@ -4,10 +4,7 @@
   "dependencies": {
     "@credenza3/partner-sdk": "link:../."
   },
-  "devDependencies": {
-    "ts-node": "^10.9.2"
-  },
   "scripts": {
-    "start": "pnpm i && node demo.js"
+    "start": "node demo.js"
   }
 }
