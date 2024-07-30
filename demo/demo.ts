@@ -1,5 +1,5 @@
-import {useAuth, useEnv} from './dist'
-import { requestPassportIdSignature } from './dist/general'
+import { useAuth, useEnv } from '@credenza3/partner-sdk'
+import { requestPassportIdSignature } from '@credenza3/partner-sdk/general'
 
 async function run() {
   useEnv('local')
@@ -14,4 +14,4 @@ async function run() {
   process.exit()
 }
 
-run()
+void run()

@@ -4,10 +4,18 @@
   "description": "Credenza partner sdk",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/credenza-web3/credenza-partner-sdk.git"
+  },
+  "author": "Credenza (Dmytro Fokin)",
   "scripts": {
     "build": "tsc && tsc-alias",
     "format": "prettier --write \"src/**/*.ts\"",
-    "dev": "pnpm run build && ts-node dev.ts"
+    "lint": "eslint --fix --max-warnings 0",
+    "dev": "pnpm run build && ts-node dev.ts",
+    "prepare": "husky",
+    "pre-commit-lint": "lint-staged"
   },
   "exports": {
     "./sui": "./dist/sui/index.js",
@@ -24,9 +32,12 @@
   },
   "devDependencies": {
     "@types/node": "^20.14.12",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.7",
     "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
     "tsc-alias": "^1.8.10",

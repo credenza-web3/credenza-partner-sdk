@@ -1,0 +1,10 @@
+{
+  "name": "partner-sdk-demo",
+  "version": "0.0.0",
+  "dependencies": {
+    "@credenza3/partner-sdk": "link:../dist"
+  },
+  "devDependencies": {
+    "lint-staged": "^15.2.7"
+  }
+}

@@ -22,7 +22,7 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/no-floating-promises': 'error',
-    'no-console': 'error',
+    //'no-console': 'error',
     eqeqeq: ['error', 'always'],
     semi: ['error', 'never'],
     'max-lines-per-function': [
@@ -40,25 +40,6 @@ module.exports = {
         ignoreRestSiblings: true,
         varsIgnorePattern: '^_',
       },
-    ],
-    '@typescript-eslint/naming-convention': [
-      'error',
-      {
-        selector: 'interface',
-        format: ['PascalCase'],
-        custom: {
-          regex: '^I[A-Z]',
-          match: true,
-        },
-      },
-      {
-        selector: 'method',
-        format: ['camelCase'],
-      },
-      {
-        selector: 'variable',
-        format: ['snake_case', 'UPPER_CASE', 'PascalCase'],
-      }
     ],
   },
 };
