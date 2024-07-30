@@ -1,20 +1,16 @@
 import { getWsConnection } from '@/common'
+import { log } from '@/lib/logging'
 
-export async function requestPassportIdSignature(
-  sub: string,
-  message: string,
-): Promise<{
-  headers: Record<string, unknown>
-  payload: {
-    signature: string
-  }
-}> {
+export async function requestPassportIdSignature(sub: string, message: string): Promise<{ signature: string }> {
   if (!sub) throw new Error('"Sub is required"')
   if (!message) throw new Error('"Message is required"')
 
   const socket = await getWsConnection()
   return new Promise((resolve, reject) => {
-    socket.once(`passport_id/signed/${sub}`, (data) => resolve(data))
+    socket.once(`passport_id/signed/${sub}`, (data) => {
+      log(requestPassportIdSignature.name, 'Received', data)
+      resolve(data.payload)
+    })
     socket.emit(
       'passport_id/request_signature',
       {
@@ -27,6 +23,7 @@ export async function requestPassportIdSignature(
         if (data.error) {
           reject(new Error(data.error.message))
         }
+        log(requestPassportIdSignature.name, 'Requested', data)
       },
     )
   })

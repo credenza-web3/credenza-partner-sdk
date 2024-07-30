@@ -9,7 +9,9 @@ npm install @credenza3/partner-sdk
 ```
 import { useAuth, useEnv } from '@credenza3/partner-sdk'
 
-useEnv('prod' | 'staging' | 'local') // 'prod'
+debug(true) // Defaults to false
+
+useEnv('prod' | 'staging' | 'local') // Defaults to 'prod'
 
 useAuth({
   clientId: string,
