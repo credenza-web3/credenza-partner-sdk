@@ -15,7 +15,8 @@
     "lint": "eslint --fix --max-warnings 0",
     "prepare": "husky",
     "pre-commit-lint": "lint-staged",
-    "demo": "pnpm run build && cd ./demo && pnpm run start"
+    "demo": "pnpm run build && cd ./demo && pnpm run start",
+    "demo:install": "cd ./demo && pnpm install"
   },
   "exports": {
     "./sui": "./dist/sui/index.js",
