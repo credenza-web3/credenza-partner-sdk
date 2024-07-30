@@ -13,9 +13,9 @@
     "build": "tsc && tsc-alias",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint --fix --max-warnings 0",
-    "dev": "pnpm run build && ts-node dev.ts",
     "prepare": "husky",
-    "pre-commit-lint": "lint-staged"
+    "pre-commit-lint": "lint-staged",
+    "demo": "pnpm run build && cd ./demo && pnpm run start"
   },
   "exports": {
     "./sui": "./dist/sui/index.js",
@@ -39,7 +39,6 @@
     "husky": "^9.1.4",
     "lint-staged": "^15.2.7",
     "prettier": "^3.3.3",
-    "ts-node": "^10.9.2",
     "tsc-alias": "^1.8.10",
     "typescript": "^5.5.4"
   }

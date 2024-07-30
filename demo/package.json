@@ -5,6 +5,9 @@
     "@credenza3/partner-sdk": "link:../dist"
   },
   "devDependencies": {
-    "lint-staged": "^15.2.7"
+    "ts-node": "^10.9.2"
+  },
+  "scripts": {
+    "start": "ts-node demo.ts"
   }
 }
