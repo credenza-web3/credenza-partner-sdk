@@ -35,6 +35,7 @@ export async function getWsConnection(): Promise<Socket> {
       },
     })
     await new Promise((resolve, reject) => {
+      socket.once('connect_error', (err) => reject(err))
       socket.once('connect', () => resolve(socket))
       setTimeout(() => reject(new Error('Cannot connect to websocket server')), 5000)
     })
