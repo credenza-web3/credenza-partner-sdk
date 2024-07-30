@@ -1,6 +1,6 @@
 {
   "name": "@credenza3/partner-sdk",
-  "version": "0.0.0-alpha.3",
+  "version": "0.0.1-alpha.0",
   "description": "Credenza partner sdk",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -31,6 +31,10 @@
     "./common": {
       "node": "./dist/common/index.js",
       "types": "./dist/common/index.d.ts"
+    },
+    "./account": {
+      "node": "./dist/account/index.js",
+      "types": "./dist/account/index.d.ts"
     },
     ".": {
       "node": "./dist/index.js",

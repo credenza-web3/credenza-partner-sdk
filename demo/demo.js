@@ -1,6 +1,7 @@
 const { useAuth, useEnv, debug } = require('@credenza3/partner-sdk')
-const { requestPassportIdSignature } = require('@credenza3/partner-sdk/common')
-const { getSuiAddress } = require('@credenza3/partner-sdk/sui')
+//const { requestPassportIdSignature } = require('@credenza3/partner-sdk/common')
+//const { getSuiAddress } = require('@credenza3/partner-sdk/sui')
+//const { getAccountInfo } = require('@credenza3/partner-sdk/account')
 
 async function run() {
   debug(true)
@@ -12,11 +13,13 @@ async function run() {
   
   // const address = await getEvmAddress('6581c0ce6a82d99c2356db66')
   // console.log(address)
-  const sig = await requestPassportIdSignature('6581c0ce6a82d99c2356db66', 'test')
-  console.log(sig)
+  // const sig = await requestPassportIdSignature('6581c0ce6a82d99c2356db66', 'test')
+  // console.log(sig)
 
-  const addr = await getSuiAddress('6581c0ce6a82d99c2356db66')
-  console.log(addr)
+  // const addr = await getSuiAddress('6581c0ce6a82d99c2356db66')
+  // console.log(addr)
+  // const acc = await getAccountInfo('6581c0ce6a82d99c2356db66')
+  // console.log(acc)
   process.exit()
 }
 

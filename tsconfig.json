@@ -7,9 +7,6 @@
     "moduleResolution": "NodeNext",
     "paths": {
       "@/*": ["./src/*"],
-      "@evm/*": ["./src/evm/*"],
-      "@sui/*": ["./src/sui/*"],
-      "@general/*": ["./src/general/*"],
     }
   },
   "include": [
