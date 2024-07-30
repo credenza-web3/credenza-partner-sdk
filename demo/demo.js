@@ -1,16 +1,18 @@
+require('dotenv').config()
+
 const { useAuth, useEnv, useDebug } = require('@credenza3/partner-sdk')
-//const { requestPassportIdSignature } = require('@credenza3/partner-sdk/api')
-//const { getSuiAddress } = require('@credenza3/partner-sdk/sui')
-//const { getAccountInfo } = require('@credenza3/partner-sdk/accounts')
-//const { addNfcId, removeNfcId, updateNfcId, getNfcId } = require('@credenza3/partner-sdk/api')
-//const { getCurrentClientInfo } = require('@credenza3/partner-sdk/accounts') 
+// const { requestPassportIdSignature } = require('@credenza3/partner-sdk/api')
+// const { getSuiAddress } = require('@credenza3/partner-sdk/sui')
+// const { getAccountInfo } = require('@credenza3/partner-sdk/accounts')
+// const { addNfcId, removeNfcId, updateNfcId, getNfcId } = require('@credenza3/partner-sdk/api')
+// const { getCurrentClientInfo } = require('@credenza3/partner-sdk/accounts') 
 
 async function run() {
   useDebug(true)
   useEnv('local')
   useAuth({
-    clientId: '66a36001a7152aa7d6f9e135',
-    clientSecret: '3fa1a513d89259f1f29181d9f2688c581cb6e3cef852d44d605350ce4537376f',
+    clientId: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
   })
   
   // const address = await getEvmAddress('6581c0ce6a82d99c2356db66')

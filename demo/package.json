@@ -4,6 +4,9 @@
   "dependencies": {
     "@credenza3/partner-sdk": "link:../."
   },
+  "devDependencies": {
+    "dotenv": "^16.4.5"
+  },
   "scripts": {
     "start": "node demo.js"
   }
