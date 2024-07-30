@@ -18,9 +18,9 @@ export function getGeneralApiUrl(): string {
 export function getGeneralWsUrl(): string {
   switch (getSdkEnv()) {
     case SDK_ENV.PROD:
-      return 'wss://api.credenza3.com'
+      return 'wss://general-prod-prod.up.railway.app'
     case SDK_ENV.STAGING:
-      return 'wss://api.staging.credenza.com'
+      return 'wss://general-staging-staging.up.railway.app'
     case SDK_ENV.LOCAL:
       return 'ws://localhost:8084'
   }
