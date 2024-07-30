@@ -1,0 +1,47 @@
+{
+  "name": "@credenza3/partner-sdk",
+  "version": "0.0.0-alpha.0",
+  "description": "Credenza partner sdk",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/credenza-web3/credenza-partner-sdk.git"
+  },
+  "author": "Credenza (Dmytro Fokin)",
+  "scripts": {
+    "build": "tsc && tsc-alias",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint --fix --max-warnings 0",
+    "test": "echo \"Error: no test specified\"",
+    "prepare": "husky",
+    "pre-commit-lint": "lint-staged",
+    "demo": "pnpm run build && cd ./demo && pnpm run start",
+    "demo:install": "cd ./demo && pnpm install"
+  },
+  "exports": {
+    "./sui": "./dist/sui/index.js",
+    "./evm": "./dist/evm/index.js",
+    "./common": "./dist/general/index.js",
+    ".": "./dist/index.js"
+  },
+  "files": [
+    "/dist"
+  ],
+  "dependencies": {
+    "buffer": "^6.0.3",
+    "socket.io-client": "^4.7.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "eslint": "8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.3",
+    "tsc-alias": "^1.8.10",
+    "typescript": "^5.5.4"
+  }
+}

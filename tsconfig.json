@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2015",
+    "declaration": true,
+    "outDir": "./dist",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@evm/*": ["./src/evm/*"],
+      "@sui/*": ["./src/sui/*"],
+      "@general/*": ["./src/general/*"],
+    }
+  },
+  "include": [
+    "src/**/*",
+    "demo/**/*"
+  ]
+}
