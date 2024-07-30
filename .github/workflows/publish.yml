@@ -1,0 +1,39 @@
+name: Publish @credenza3/partner-sdk
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'package.json'
+  workflow_dispatch:
+
+jobs:
+  publish-package:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          always-auth: true
+          registry-url: https://registry.npmjs.org
+          scope: '@credenza3'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest   
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Tests
+        run: pnpm run test
+      - name: Build package
+        run: pnpm run build
+      - name: Publish package
+        run: pnpm publish --access public
+        env:
+          NPM_AUTH_TOKEN: ${{secrets.CREDENZA_PUBLISH_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.CREDENZA_PUBLISH_TOKEN}}
