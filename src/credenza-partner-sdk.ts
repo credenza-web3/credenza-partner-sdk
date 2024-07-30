@@ -10,6 +10,6 @@ export function useEnv(sdkEnv: TSdkEnv): void {
   setSdkEnv(sdkEnv)
 }
 
-export function debug(enableDebug: boolean) {
+export function useDebug(enableDebug: boolean) {
   enableSdkDebug(enableDebug)
 }
