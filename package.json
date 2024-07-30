@@ -13,6 +13,7 @@
     "build": "tsc && tsc-alias",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint --fix --max-warnings 0",
+    "test": "echo \"Error: no test specified\"",
     "prepare": "husky",
     "pre-commit-lint": "lint-staged",
     "demo": "pnpm run build && cd ./demo && pnpm run start",
