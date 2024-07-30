@@ -1,7 +1,7 @@
 import { setCredentials, TCredentials } from './lib/credentials'
 import { setSdkEnv, TSdkEnv } from './lib/sdk-env'
 
-export function auth(credentials: TCredentials): void {
+export function useAuth(credentials: TCredentials): void {
   setCredentials(credentials)
 }
 

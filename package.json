@@ -10,8 +10,9 @@
     "dev": "pnpm run build && ts-node dev.ts"
   },
   "exports": {
-    "./evm": "./dist/evm/index.js",
+    "./sui/zk": "./dist/sui/zk/index.js",
     "./sui": "./dist/sui/index.js",
+    "./evm": "./dist/evm/index.js",
     "./general": "./dist/general/index.js",
     ".": "./dist/index.js"
   },
@@ -20,7 +21,6 @@
   ],
   "dependencies": {
     "buffer": "^6.0.3",
-    "socket.io": "^4.7.5",
     "socket.io-client": "^4.7.5"
   },
   "devDependencies": {
