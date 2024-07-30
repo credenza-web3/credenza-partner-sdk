@@ -1,5 +1,5 @@
 {
-  "name": "credenza-partner-sdk",
+  "name": "@credenza3/partner-sdk",
   "version": "0.0.0-alpha.0",
   "description": "Credenza partner sdk",
   "main": "dist/index.js",
@@ -10,10 +10,9 @@
     "dev": "pnpm run build && ts-node dev.ts"
   },
   "exports": {
-    "./sui/zk": "./dist/sui/zk/index.js",
     "./sui": "./dist/sui/index.js",
     "./evm": "./dist/evm/index.js",
-    "./general": "./dist/general/index.js",
+    "./common": "./dist/general/index.js",
     ".": "./dist/index.js"
   },
   "files": [
