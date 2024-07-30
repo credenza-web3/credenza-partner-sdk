@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  publish-gpr:
+  publish-package:
     runs-on: ubuntu-latest
     strategy:
       matrix:
