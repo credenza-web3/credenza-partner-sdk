@@ -32,9 +32,9 @@
       "node": "./dist/common/index.js",
       "types": "./dist/common/index.d.ts"
     },
-    "./account": {
-      "node": "./dist/account/index.js",
-      "types": "./dist/account/index.d.ts"
+    "./accounts": {
+      "node": "./dist/accounts/index.js",
+      "types": "./dist/accounts/index.d.ts"
     },
     ".": {
       "node": "./dist/index.js",

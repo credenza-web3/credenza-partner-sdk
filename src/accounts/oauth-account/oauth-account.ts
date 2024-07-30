@@ -1,5 +1,5 @@
 import { getBasicToken } from '@/lib/credentials'
-import { getOAuthApiUrl } from '@/account'
+import { getOAuthApiUrl } from '@/accounts'
 import { log } from '@/lib/logging'
 
 export async function getAccountInfo(sub: string): Promise<{

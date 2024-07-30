@@ -1,4 +1,4 @@
-import { getWsConnection } from '@/common'
+import { getWsConnection } from '@/api'
 import { log } from '@/lib/logging'
 
 export async function requestPassportIdSignature(sub: string, message: string): Promise<{ signature: string }> {

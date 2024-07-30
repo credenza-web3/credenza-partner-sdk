@@ -23,7 +23,7 @@ useAuth({
 
 [api](./src/api/README.md)
 
-[account](./src/account/README.md)
+[accounts](./src/accounts/README.md)
 
 [evm](./src/evm/README.md)
 

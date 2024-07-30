@@ -1,7 +1,7 @@
 const { useAuth, useEnv, debug } = require('@credenza3/partner-sdk')
 //const { requestPassportIdSignature } = require('@credenza3/partner-sdk/common')
 //const { getSuiAddress } = require('@credenza3/partner-sdk/sui')
-//const { getAccountInfo } = require('@credenza3/partner-sdk/account')
+//const { getAccountInfo } = require('@credenza3/partner-sdk/accounts')
 
 async function run() {
   debug(true)
