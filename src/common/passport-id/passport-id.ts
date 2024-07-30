@@ -1,6 +1,14 @@
 import { getWsConnection } from '@/common'
 
-export async function requestPassportIdSignature(sub: string, message: string) {
+export async function requestPassportIdSignature(
+  sub: string,
+  message: string,
+): Promise<{
+  headers: Record<string, unknown>
+  payload: {
+    signature: string
+  }
+}> {
   if (!sub) throw new Error('"Sub is required"')
   if (!message) throw new Error('"Message is required"')
 

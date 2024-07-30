@@ -1,5 +1,5 @@
-import { useAuth, useEnv } from '@credenza3/partner-sdk'
-import { requestPassportIdSignature } from '@credenza3/partner-sdk/general'
+const { useAuth, useEnv } = require('@credenza3/partner-sdk')
+const { requestPassportIdSignature } = require('@credenza3/partner-sdk/common')
 
 async function run() {
   useEnv('local')

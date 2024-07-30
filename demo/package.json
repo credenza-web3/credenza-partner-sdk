@@ -2,12 +2,12 @@
   "name": "partner-sdk-demo",
   "version": "0.0.0",
   "dependencies": {
-    "@credenza3/partner-sdk": "link:../dist"
+    "@credenza3/partner-sdk": "link:../."
   },
   "devDependencies": {
     "ts-node": "^10.9.2"
   },
   "scripts": {
-    "start": "ts-node demo.ts"
+    "start": "pnpm i && node demo.js"
   }
 }

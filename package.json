@@ -2,28 +2,47 @@
   "name": "@credenza3/partner-sdk",
   "version": "0.0.0-alpha.1",
   "description": "Credenza partner sdk",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "types": "dist/types/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/credenza-web3/credenza-partner-sdk.git"
   },
   "author": "Credenza (Dmytro Fokin)",
   "scripts": {
-    "build": "tsc && tsc-alias",
+    "build:cjs": "tsc && tsc-alias",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:declaration": "tsc -p tsconfig.declaration.json --emitDeclarationOnly",
+    "build": "pnpm run build:cjs && pnpm run build:esm && pnpm run build:declaration",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint \"src/**/*.ts\" --fix --max-warnings 0",
     "test": "echo \"Error: no test specified\"",
     "prepare": "husky",
     "pre-commit-lint": "lint-staged",
-    "demo": "pnpm run build && cd ./demo && pnpm run start",
+    "demo": "pnpm run build:cjs && cd ./demo && pnpm run start",
     "demo:install": "cd ./demo && pnpm install"
   },
   "exports": {
-    "./sui": "./dist/sui/index.js",
-    "./evm": "./dist/evm/index.js",
-    "./common": "./dist/common/index.js",
-    ".": "./dist/index.js"
+    "./sui": {
+      "require": "./dist/cjs/sui/index.js",
+      "import": "./dist/esm/sui/index.js",
+      "types": "./dist/types/sui/index.d.ts"
+    },
+    "./evm": {
+      "require": "./dist/cjs/evm/index.js",
+      "import": "./dist/esm/evm/index.js",
+      "types": "./dist/types/evm/index.d.ts"
+    },
+    "./common": {
+      "require": "./dist/cjs/common/index.js",
+      "import": "./dist/esm/common/index.js",
+      "types": "./dist/types/common/index.d.ts"
+    },
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
   },
   "files": [
     "/dist"
