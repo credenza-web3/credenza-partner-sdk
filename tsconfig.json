@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es2015",
-    "declaration": false,
-    "outDir": "./dist/cjs",
+    "module": "NodeNext",
+    "target": "esnext",
+    "declaration": true,
+    "outDir": "./dist",
+    "moduleResolution": "nodenext",
     "paths": {
       "@/*": ["./src/*"],
       "@evm/*": ["./src/evm/*"],
