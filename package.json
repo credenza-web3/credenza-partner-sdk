@@ -1,6 +1,6 @@
 {
   "name": "@credenza3/partner-sdk",
-  "version": "0.0.0-alpha.0",
+  "version": "0.0.0-alpha.1",
   "description": "Credenza partner sdk",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,7 +12,7 @@
   "scripts": {
     "build": "tsc && tsc-alias",
     "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "eslint --fix --max-warnings 0",
+    "lint": "eslint \"src/**/*.ts\" --fix --max-warnings 0",
     "test": "echo \"Error: no test specified\"",
     "prepare": "husky",
     "pre-commit-lint": "lint-staged",
@@ -22,7 +22,7 @@
   "exports": {
     "./sui": "./dist/sui/index.js",
     "./evm": "./dist/evm/index.js",
-    "./common": "./dist/general/index.js",
+    "./common": "./dist/common/index.js",
     ".": "./dist/index.js"
   },
   "files": [

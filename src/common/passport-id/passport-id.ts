@@ -1,4 +1,4 @@
-import { getWsConnection } from '@/general'
+import { getWsConnection } from '@/common'
 
 export async function requestPassportIdSignature(sub: string, message: string) {
   if (!sub) throw new Error('"Sub is required"')
