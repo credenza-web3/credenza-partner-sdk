@@ -9,7 +9,7 @@ export function getGeneralApiUrl(): string {
     case SDK_ENV.PROD:
       return 'https://api.credenza3.com'
     case SDK_ENV.STAGING:
-      return 'https://api.staging.credenza.com'
+      return 'https://api.staging.credenza3.com'
     case SDK_ENV.LOCAL:
       return 'http://localhost:8084'
   }

@@ -5,7 +5,7 @@ export function getEvmApiUrl() {
     case SDK_ENV.PROD:
       return 'https://evm.credenza3.com'
     case SDK_ENV.STAGING:
-      return 'https://evm.staging.credenza.com'
+      return 'https://evm.staging.credenza3.com'
     case SDK_ENV.LOCAL:
       return 'http://localhost:8082'
   }

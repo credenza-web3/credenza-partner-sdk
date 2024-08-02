@@ -5,7 +5,7 @@ export function getOAuthApiUrl() {
     case SDK_ENV.PROD:
       return 'https://accounts.credenza3.com'
     case SDK_ENV.STAGING:
-      return 'https://accounts.staging.credenza.com'
+      return 'https://accounts.staging.credenza3.com'
     case SDK_ENV.LOCAL:
       return 'http://localhost:8081'
   }

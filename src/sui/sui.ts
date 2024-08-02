@@ -5,7 +5,7 @@ export function getSuiApiUrl() {
     case SDK_ENV.PROD:
       return 'https://sui.credenza3.com'
     case SDK_ENV.STAGING:
-      return 'https://sui.staging.credenza.com'
+      return 'https://sui.staging.credenza3.com'
     case SDK_ENV.LOCAL:
       return 'http://localhost:8083'
   }

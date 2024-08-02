@@ -11,7 +11,7 @@ export function setCredentials(credentialsInput: TCredentials): void {
 }
 
 export function getCredentials(): TCredentials {
-  if (!credentials.clientId || !credentials.clientSecret) throw new Error('Credentials are not set')
+  if (!credentials?.clientId || !credentials?.clientSecret) throw new Error('Credentials are not set')
   return credentials
 }
 
