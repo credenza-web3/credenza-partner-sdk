@@ -15,7 +15,7 @@ export function getEvmApiUrl() {
   }
 }
 
-export function getGeneralWsUrl(): string {
+export function getEvmWsUrl(): string {
   switch (getSdkEnv()) {
     case SDK_ENV.PROD:
       return 'wss://evm-prod-prod.up.railway.app'
@@ -27,7 +27,7 @@ export function getGeneralWsUrl(): string {
 }
 export async function getWsConnection(): Promise<Socket> {
   if (!socket?.connected) {
-    socket = await connectToWs(getGeneralWsUrl())
+    socket = await connectToWs(getEvmWsUrl())
   }
   return socket
 }
