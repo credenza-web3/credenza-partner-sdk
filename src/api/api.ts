@@ -1,6 +1,6 @@
 import { getSdkEnv, SDK_ENV } from '@/lib/sdk-env'
-import { io, Socket } from 'socket.io-client'
-import { getCredentials } from '@/lib/credentials'
+import { Socket } from 'socket.io-client'
+import { connectToWs } from '@/lib/ws'
 
 let socket: Socket
 
@@ -26,19 +26,8 @@ export function getGeneralWsUrl(): string {
   }
 }
 export async function getWsConnection(): Promise<Socket> {
-  const credentials = getCredentials()
   if (!socket?.connected) {
-    socket = io(getGeneralWsUrl(), {
-      auth: {
-        client_id: credentials.clientId,
-        client_secret: credentials.clientSecret,
-      },
-    })
-    await new Promise((resolve, reject) => {
-      socket.once('connect_error', (err) => reject(err))
-      socket.once('connect', () => resolve(socket))
-      setTimeout(() => reject(new Error('Cannot connect to websocket server')), 5000)
-    })
+    socket = await connectToWs(getGeneralWsUrl())
   }
   return socket
 }

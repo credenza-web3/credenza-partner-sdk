@@ -3,9 +3,10 @@ require('dotenv').config()
 const { useAuth, useEnv, useDebug } = require('@credenza3/partner-sdk')
 // const { requestPassportIdSignature } = require('@credenza3/partner-sdk/api')
 // const { getSuiAddress } = require('@credenza3/partner-sdk/sui')
-//const { getAccountInfo } = require('@credenza3/partner-sdk/accounts')
+// const { getAccountInfo } = require('@credenza3/partner-sdk/accounts')
 // const { addNfcId, removeNfcId, updateNfcId, getNfcId } = require('@credenza3/partner-sdk/api')
 // const { getCurrentClientInfo } = require('@credenza3/partner-sdk/accounts') 
+// const { findEvmContracts } = require('@credenza3/partner-sdk/evm')
 
 async function run() {
   useDebug(true)
@@ -30,6 +31,10 @@ async function run() {
 
   // const client = await getCurrentClientInfo()
   // console.log(client)
+
+  //const list = await findEvmContracts()
+  //console.log(list)
+
   process.exit()
 }
 
