@@ -78,3 +78,24 @@ export async function deployEvmContract(name: string, chainId: number, ownerAddr
     )
   })
 }
+
+export async function sendEvmMetaTransaction(unsignedSerializedMetaTx: string) {
+  const socket = await getWsConnection()
+  return new Promise((resolve, reject) => {
+    socket.emit(
+      'contracts/forward_transaction/client',
+      {
+        payload: {
+          unsigned_serialized_meta_tx: unsignedSerializedMetaTx,
+        },
+      },
+      (data) => {
+        if (data.error) {
+          return reject(new Error(data.error.message))
+        }
+        log(sendEvmMetaTransaction.name, `meta tx sent`, data)
+        resolve(data.payload)
+      },
+    )
+  })
+}

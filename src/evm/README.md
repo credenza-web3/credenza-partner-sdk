@@ -16,7 +16,8 @@ const { address } = await getEvmAddress(sub: string)
 import { 
   getAvailableEvmContracts,
   findEvmContracts,
-  deployEvmContract
+  deployEvmContract,
+  sendEvmMetaTransaction
 } from '@credenza3/partner-sdk/evm'
 
 const arr = await getAvailableEvmContracts()
@@ -28,5 +29,7 @@ const arr = await findEvmContracts({
   type?: string
   chainId?: string
 })
+
+const tx = await sendEvmMetaTransaction(unsignedSerializedMetaTx: string)
 
 ```
