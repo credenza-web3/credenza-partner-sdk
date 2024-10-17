@@ -5,11 +5,12 @@
     "declaration": true,
     "outDir": "./dist",
     "moduleResolution": "NodeNext",
+    "types": ["jest", "node"],
     "paths": {
       "@/*": ["./src/*"],
     }
   },
   "include": [
-    "src/**/*",
-  ]
+    "src/**/*", "jest.setup.spec.ts",
+  ],
 }
