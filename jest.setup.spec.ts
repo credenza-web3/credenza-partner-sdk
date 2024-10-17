@@ -4,7 +4,7 @@ import { useAuth, useEnv, useDebug } from './src/credenza-partner-sdk'
 
 dotenvConfig()
 
-beforeEach(() => {
+beforeAll(() => {
   useDebug(false)
   useEnv('local')
   useAuth({
