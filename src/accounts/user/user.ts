@@ -3,7 +3,7 @@ import { getOAuthApiUrl } from '@/accounts'
 import { log } from '@/lib/logging'
 import { toCamelCase } from '@/lib/obj'
 
-import type { TOAuthAccountInfo } from './oauth-account.types'
+import type { TOAuthAccountInfo } from './user.types'
 
 export async function getAccountInfo(sub: string): Promise<TOAuthAccountInfo> {
   const response = await fetch(`${getOAuthApiUrl()}/accounts/${sub}`, {
