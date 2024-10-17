@@ -1,11 +1,11 @@
 import { log } from '@/lib/logging'
-import { getGeneralApiUrl } from '@/api'
+import { getOAuthApiUrl } from '@/accounts'
 import { getBasicToken } from '@/lib/credentials'
 import { TJwtAuthValidator, TJwtAuthValidatorParams, TJwtAuthUpdateValidatorParams } from './jwt-auth.types'
 import { camelToSnakeCase, snakeToCamelCase } from '@/lib/obj'
 
 export async function addJwtValidator(params: TJwtAuthValidatorParams): Promise<TJwtAuthValidator> {
-  const response = await fetch(`${getGeneralApiUrl()}/clients/jwt-auth`, {
+  const response = await fetch(`${getOAuthApiUrl()}/clients/jwt-auth`, {
     method: 'POST',
     headers: {
       Authorization: getBasicToken(),
@@ -22,7 +22,7 @@ export async function updateJwtValidator(
   id: string,
   params: TJwtAuthUpdateValidatorParams,
 ): Promise<TJwtAuthValidator> {
-  const response = await fetch(`${getGeneralApiUrl()}/clients/jwt-auth/${id}`, {
+  const response = await fetch(`${getOAuthApiUrl()}/clients/jwt-auth/${id}`, {
     method: 'PATCH',
     headers: {
       Authorization: getBasicToken(),
@@ -36,7 +36,7 @@ export async function updateJwtValidator(
 }
 
 export async function removeJwtValidator(id: string): Promise<boolean> {
-  const response = await fetch(`${getGeneralApiUrl()}/clients/jwt-auth/${id}`, {
+  const response = await fetch(`${getOAuthApiUrl()}/clients/jwt-auth/${id}`, {
     method: 'DELETE',
     headers: {
       Authorization: getBasicToken(),
@@ -49,7 +49,7 @@ export async function removeJwtValidator(id: string): Promise<boolean> {
 }
 
 export async function getJwtValidators(): Promise<TJwtAuthValidator[]> {
-  const response = await fetch(`${getGeneralApiUrl()}/clients/jwt-auth`, {
+  const response = await fetch(`${getOAuthApiUrl()}/clients/jwt-auth`, {
     headers: {
       Authorization: getBasicToken(),
       'Content-Type': 'application/json',
