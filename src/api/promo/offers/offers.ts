@@ -69,8 +69,16 @@ export async function checkPromoOffer(id: string, sub: string): Promise<boolean>
   return !!json
 }
 
-export async function getPromoOfferRss(): Promise<TOfferRss> {
-  const response = await fetch(`${getGeneralApiUrl()}/promo/offers/rss`, {
+export async function getPromoOfferRss(params: { suiAddress?: string; evmAddress?: string }): Promise<TOfferRss> {
+  const url = new URL(`${getGeneralApiUrl()}/promo/offers/rss`)
+  if (params?.suiAddress) {
+    url.searchParams.append('sui_address', params.suiAddress)
+  } else if (params?.evmAddress) {
+    url.searchParams.append('evm_address', params.evmAddress)
+    throw new Error('Currently not supported for EVM') // Remove when implemented
+  }
+
+  const response = await fetch(url.toString(), {
     headers: {
       Authorization: getBasicToken(),
       'Content-Type': 'application/json',
