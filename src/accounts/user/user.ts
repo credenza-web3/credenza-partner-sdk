@@ -1,15 +1,11 @@
 import { getBasicToken } from '@/lib/credentials'
 import { getOAuthApiUrl } from '@/accounts'
 import { log } from '@/lib/logging'
+import { toCamelCase } from '@/lib/obj'
 
-export async function getAccountInfo(sub: string): Promise<{
-  id: string
-  name: string
-  login_type: string
-  picture?: string
-  email?: string
-  phone?: string
-}> {
+import type { TOAuthAccountInfo } from './user.types'
+
+export async function getAccountInfo(sub: string): Promise<TOAuthAccountInfo> {
   const response = await fetch(`${getOAuthApiUrl()}/accounts/${sub}`, {
     headers: {
       Authorization: getBasicToken(),
@@ -18,5 +14,5 @@ export async function getAccountInfo(sub: string): Promise<{
   })
   const json = await response.json()
   log(getAccountInfo.name, json)
-  return json
+  return toCamelCase(json) as TOAuthAccountInfo
 }
