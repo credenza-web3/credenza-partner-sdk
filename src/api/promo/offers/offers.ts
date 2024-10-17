@@ -85,7 +85,6 @@ export async function getPromoOfferRss(params: { suiAddress?: string; evmAddress
     },
   })
   const json = await response.json()
-  console.log(json)
   log(getPromoOfferRss.name, json)
   return toCamelCase(json) as TOfferRss[]
 }
