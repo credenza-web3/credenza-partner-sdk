@@ -1,11 +1,11 @@
 export type TUpdateRuleParams = {
-  title: string
-  description: string
-  resourceId: string
-  chainType: string
-  chainId: number
-  type: string
-  value: unknown
+  title?: string
+  description?: string
+  resourceId?: string
+  chainType?: string
+  chainId?: number
+  type?: string
+  value?: unknown
 }
 
 export type TCreateRuleParams = Required<TUpdateRuleParams>

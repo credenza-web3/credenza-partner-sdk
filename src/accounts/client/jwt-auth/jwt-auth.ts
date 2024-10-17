@@ -1,8 +1,8 @@
 import { log } from '@/lib/logging'
 import { getOAuthApiUrl } from '@/accounts'
 import { getBasicToken } from '@/lib/credentials'
-import { TJwtAuthValidator, TJwtAuthValidatorParams, TJwtAuthUpdateValidatorParams } from './jwt-auth.types'
-import { camelToSnakeCase, snakeToCamelCase } from '@/lib/obj'
+import { toCamelCase, toSnakeCase } from '@/lib/obj'
+import type { TJwtAuthValidator, TJwtAuthValidatorParams, TJwtAuthUpdateValidatorParams } from './jwt-auth.types'
 
 export async function addJwtValidator(params: TJwtAuthValidatorParams): Promise<TJwtAuthValidator> {
   const response = await fetch(`${getOAuthApiUrl()}/clients/jwt-auth`, {
@@ -11,11 +11,11 @@ export async function addJwtValidator(params: TJwtAuthValidatorParams): Promise<
       Authorization: getBasicToken(),
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(camelToSnakeCase(params)),
+    body: JSON.stringify(toSnakeCase(params)),
   })
   const json = await response.json()
   log(addJwtValidator.name, json)
-  return snakeToCamelCase(json) as TJwtAuthValidator
+  return toCamelCase(json) as TJwtAuthValidator
 }
 
 export async function updateJwtValidator(
@@ -28,11 +28,11 @@ export async function updateJwtValidator(
       Authorization: getBasicToken(),
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(camelToSnakeCase(params)),
+    body: JSON.stringify(toSnakeCase(params)),
   })
   const json = await response.json()
   log(updateJwtValidator.name, json)
-  return snakeToCamelCase(json) as TJwtAuthValidator
+  return toCamelCase(json) as TJwtAuthValidator
 }
 
 export async function removeJwtValidator(id: string): Promise<boolean> {
@@ -57,5 +57,5 @@ export async function getJwtValidators(): Promise<TJwtAuthValidator[]> {
   })
   const json = await response.json()
   log(getJwtValidators.name, json)
-  return snakeToCamelCase(json) as TJwtAuthValidator[]
+  return toCamelCase(json) as TJwtAuthValidator[]
 }

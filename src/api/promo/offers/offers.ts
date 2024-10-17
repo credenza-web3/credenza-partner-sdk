@@ -2,7 +2,7 @@ import { log } from '@/lib/logging'
 import { getGeneralApiUrl } from '@/api'
 import { getBasicToken } from '@/lib/credentials'
 import { TCreateOfferParams, TUpdateOfferParams, TOffer, TOfferRss } from './offers.types'
-import { camelToSnakeCase, snakeToCamelCase } from '@/lib/obj'
+import { toCamelCase, toSnakeCase } from '@/lib/obj'
 
 export async function addPromoOffer(params: TCreateOfferParams): Promise<TOffer> {
   const response = await fetch(`${getGeneralApiUrl()}/promo/offers`, {
@@ -11,11 +11,11 @@ export async function addPromoOffer(params: TCreateOfferParams): Promise<TOffer>
       Authorization: getBasicToken(),
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(camelToSnakeCase(params)),
+    body: JSON.stringify(toSnakeCase(params)),
   })
   const json = await response.json()
   log(addPromoOffer.name, json)
-  return snakeToCamelCase(json) as TOffer
+  return toCamelCase(json) as TOffer
 }
 
 export async function updatePromoOffer(id: string, params: TUpdateOfferParams): Promise<TOffer> {
@@ -25,11 +25,11 @@ export async function updatePromoOffer(id: string, params: TUpdateOfferParams): 
       Authorization: getBasicToken(),
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(camelToSnakeCase(params)),
+    body: JSON.stringify(toSnakeCase(params)),
   })
   const json = await response.json()
   log(updatePromoOffer.name, json)
-  return snakeToCamelCase(json) as TOffer
+  return toCamelCase(json) as TOffer
 }
 
 export async function removePromoOffer(id: string): Promise<boolean> {
@@ -54,7 +54,7 @@ export async function getPromoOffers(): Promise<TOffer[]> {
   })
   const json = await response.json()
   log(getPromoOffers.name, json)
-  return snakeToCamelCase(json) as TOffer[]
+  return toCamelCase(json) as TOffer[]
 }
 
 export async function checkPromoOffer(id: string, sub: string): Promise<boolean> {
@@ -66,10 +66,10 @@ export async function checkPromoOffer(id: string, sub: string): Promise<boolean>
   })
   const json = await response.json()
   log(checkPromoOffer.name, json)
-  return !!json
+  return json
 }
 
-export async function getPromoOfferRss(params: { suiAddress?: string; evmAddress?: string }): Promise<TOfferRss> {
+export async function getPromoOfferRss(params: { suiAddress?: string; evmAddress?: string }): Promise<TOfferRss[]> {
   const url = new URL(`${getGeneralApiUrl()}/promo/offers/rss`)
   if (params?.suiAddress) {
     url.searchParams.append('sui_address', params.suiAddress)
@@ -85,6 +85,7 @@ export async function getPromoOfferRss(params: { suiAddress?: string; evmAddress
     },
   })
   const json = await response.json()
+  console.log(json)
   log(getPromoOfferRss.name, json)
-  return snakeToCamelCase(json) as TOfferRss
+  return toCamelCase(json) as TOfferRss[]
 }
