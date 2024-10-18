@@ -20,7 +20,7 @@ function generateExports(dir, exportPath) {
       exportsUpd[exportKey] = {
         "import": `./${relativePath}`,
         "require": `./${relativePath.replace('/esm/', '/cjs/')}`,
-        "types": `./${relativePath.replace('/esm/','/types/').replace('.js', '.d.ts')}`,
+        "types": `./${relativePath.replace('.js', '.d.ts')}`,
       };
     }
   });
