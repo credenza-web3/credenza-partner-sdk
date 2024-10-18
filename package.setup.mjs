@@ -1,12 +1,9 @@
 import * as fs from 'fs'
 import * as path from 'path'
 
-// Define the directory you want to scan, e.g., 'dist'
-const distDir = './dist';
+const DIST_DIR = './dist';
 
-// Initialize an empty exports object
 let exportsUpd = {};
-
 function generateExports(dir, exportPath) {
   if (/^lib/.test(exportPath)) return
 
@@ -16,10 +13,8 @@ function generateExports(dir, exportPath) {
     const exportKey = `./${exportPath}`;
 
     if (dirent.isDirectory()) {
-      // Recurse into directories
       generateExports(fullPath, path.join(exportPath, dirent.name));
     } else if (dirent.isFile() && dirent.name === 'index.js') {
-      // Only process `index.js` files
       exportsUpd[exportKey] = {
         "import": `./${relativePath}`,
         "require": `./${relativePath}`
@@ -27,7 +22,7 @@ function generateExports(dir, exportPath) {
     }
   });
 }
-generateExports(distDir, '');
+generateExports(DIST_DIR, '');
 
 //console.log(exportsUpd)
 
