@@ -9,7 +9,7 @@ export type TJwtAuthUpdateValidatorParams = {
     tokenParamKind?: string
     tokenParamMask?: string
   }
-  profile_fields_mapping?: {
+  profileFieldsMapping?: {
     email?: string
     phone?: string
     picture?: string
@@ -19,14 +19,6 @@ export type TJwtAuthUpdateValidatorParams = {
 
 export type TJwtAuthValidatorParams = TJwtAuthUpdateValidatorParams & {
   validationFields: string[]
-  userinfoRequestConfig?: {
-    method: string
-    url: string
-    contentType: string
-    tokenParamName: string
-    tokenParamKind: string
-    tokenParamMask?: string
-  }
 }
 
 export type TJwtAuthValidator = TJwtAuthValidatorParams & {
