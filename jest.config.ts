@@ -10,7 +10,7 @@ const config: Config = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
   },
-  setupFilesAfterEnv: [resolve(__dirname, 'jest.setup.spec.ts')],
+  setupFilesAfterEnv: [resolve(__dirname, 'jest.setup.ts')],
 }
 
 export default config
