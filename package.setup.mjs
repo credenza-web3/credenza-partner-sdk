@@ -27,26 +27,26 @@ function generateExports(dir, exportPath) {
 }
 generateExports(DIST_DIR, '');
 
-// const sortedExports = Object.keys(exportsUpd)
-//   .sort((a, b) => b.split('/').length - a.split('/').length) // Sort by depth, deeper paths first
-//   .reduce((acc, key) => {
-//     acc[key] = exportsUpd[key];
-//     return acc;
-//   }, {});
+const sortedExports = Object.keys(exportsUpd)
+  .sort((a, b) => b.split('/').length - a.split('/').length) // Sort by depth, deeper paths first
+  .reduce((acc, key) => {
+    acc[key] = exportsUpd[key];
+    return acc;
+  }, {});
 
-const sortedExports = {
-  ".": {
-    "import": "./dist/esm/index.js",
-    "require": "./dist/cjs/index.js"
-  },
-  // This is necessary to require/import `your-library/package.json`
-  "./package.json": "./package.json",
-  // or everything in the source root:
-  "./*": {
-    "import": "./dist/esm/*.js",
-    "require": "./dist/cjs/*.js"
-  }
-}
+// const sortedExports = {
+//   // ".": {
+//   //   "import": "./dist/esm/index.js",
+//   //   "require": "./dist/cjs/index.js"
+//   // },
+//   // This is necessary to require/import `your-library/package.json`
+//   "./package.json": "./package.json",
+//   // or everything in the source root:
+//   // "./*": {
+//   //   "import": "./dist/esm/*.js",
+//   //   "require": "./dist/cjs/*.js"
+//   // }
+// }
 
 const packageJsonPath = './package.json'
 const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
