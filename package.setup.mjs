@@ -36,15 +36,15 @@ generateExports(DIST_DIR, '');
 
 const sortedExports = {
   ".": {
-    "import": "./build/esm/index.js",
-    "require": "./build/cjs/index.js"
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js"
   },
   // This is necessary to require/import `your-library/package.json`
   "./package.json": "./package.json",
   // or everything in the source root:
   "./*": {
-    "import": "./build/esm/*.js",
-    "require": "./build/cjs/*.js"
+    "import": "./dist/esm/*.js",
+    "require": "./dist/cjs/*.js"
   }
 }
 
