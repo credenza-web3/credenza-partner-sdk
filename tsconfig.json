@@ -1,19 +1,24 @@
 {
   "compilerOptions": {
+    "target": "esnext",
     "module": "NodeNext",
-    "target": "ESNext",
-    "declaration": true,
-    "outDir": "./dist",
     "moduleResolution": "NodeNext",
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "outDir": "./dist/esm",
     "types": ["jest", "node"],
     "esModuleInterop": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"],
-      "@credenza3/partner-sdk/*": ["./dist/*"]
     }
+  },
+  "tsc-alias": {
+    "resolveFullPaths": true,
+    "verbose": true
   },
   "include": [
     "src/**/*",

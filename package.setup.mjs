@@ -1,14 +1,17 @@
 import * as fs from 'fs'
 import * as path from 'path'
 
-const DIST_DIR = './dist';
+const DIST_DIR = './dist/esm';
 
-const exportsUpd = {};
+const exportsUpd = {
+  "./package.json": "./package.json",
+};
 function generateExports(dir, exportPath) {
   if (/^lib/.test(exportPath)) return
 
   fs.readdirSync(dir, { withFileTypes: true }).forEach(dirent => {
     const fullPath = path.join(dir, dirent.name);
+    console.log(fullPath)
     const relativePath = path.relative('.', fullPath);
     const exportKey = exportPath ? `./${exportPath}` : '.';
 
@@ -18,7 +21,6 @@ function generateExports(dir, exportPath) {
       exportsUpd[exportKey] = {
         "import": `./${relativePath}`,
         "require": `./${relativePath}`,
-        "node": `./${relativePath}`,
         "types": `./${relativePath.replace('.js', '.d.ts')}`,
       };
     }
