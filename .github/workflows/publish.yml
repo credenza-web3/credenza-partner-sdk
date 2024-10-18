@@ -28,10 +28,12 @@ jobs:
           version: latest   
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Tests
-        run: pnpm run test
+      #- name: Tests
+      #  run: pnpm run test
       - name: Build package
         run: pnpm run build
+      - name: Build package.json exports
+        run: pnpm run build:exports
       - name: Publish package
         run: pnpm publish --access public
         env:

@@ -1,6 +1,6 @@
 {
   "name": "@credenza3/partner-sdk",
-  "version": "0.0.2",
+  "version": "0.0.2-alpha.0",
   "description": "Credenza partner sdk",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,34 +11,12 @@
   "author": "Credenza (Dmytro Fokin)",
   "scripts": {
     "build": "tsc && tsc-alias",
+    "build:exports": "node ./package.setup.mjs",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint \"src/**/*.ts\" --fix --max-warnings 0 --no-warn-ignored",
     "test": "jest",
     "prepare": "husky",
-    "pre-commit-lint": "lint-staged",
-    "demo": "pnpm run build && cd ./demo && pnpm i && pnpm run start"
-  },
-  "exports": {
-    "./sui": {
-      "node": "./dist/sui/index.js",
-      "types": "./dist/sui/index.d.ts"
-    },
-    "./evm": {
-      "node": "./dist/evm/index.js",
-      "types": "./dist/evm/index.d.ts"
-    },
-    "./api": {
-      "node": "./dist/api/index.js",
-      "types": "./dist/api/index.d.ts"
-    },
-    "./accounts": {
-      "node": "./dist/accounts/index.js",
-      "types": "./dist/accounts/index.d.ts"
-    },
-    ".": {
-      "node": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
+    "pre-commit-lint": "lint-staged"
   },
   "files": [
     "/dist"
