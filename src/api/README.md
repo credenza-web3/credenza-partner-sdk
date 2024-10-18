@@ -1,32 +1,10 @@
 # @credenza3/partner-sdk/api
 
-## USAGE
+## MODULES
 
-#### PassportId
+[api/nfc-id](./rules/README.md)
 
-```
-import { requestPassportIdSignature } from '@credenza3/partner-sdk/api'
+[api/passport-id](./passport-id/README.md)
 
-const { signature } = await requestPassportIdSignature(sub: string, message: string)
-```
+[api/promo](./promo/README.md)
 
-#### NfcId
-
-```
-import { addNfcId, removeNfcId, updateNfcId, getNfcId } from '@credenza3/partner-sdk/api'
-
-const result = await addNfcId({
-  sub: string
-  serialNumber: string
-  text?: string
-})
-
-const result = await updateNfcId(sub: string, {
-  serialNumber?: string
-  text?: string
-})
-
-const result = await getNfcId(sub: string)
-
-const result = await removeNfcId(sub: string)
-```
