@@ -32,6 +32,8 @@ jobs:
       #  run: pnpm run test
       - name: Build package
         run: pnpm run build
+      - name: Build package.json
+        run: pnpm run build:exports
       - name: Publish package
         run: pnpm publish --access public
         env:

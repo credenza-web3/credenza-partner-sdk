@@ -1,6 +1,6 @@
 {
   "name": "@credenza3/partner-sdk",
-  "version": "0.0.2",
+  "version": "0.0.3-alpha.0",
   "description": "Credenza partner sdk",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -11,12 +11,12 @@
   "author": "Credenza (Dmytro Fokin)",
   "scripts": {
     "build": "tsc && tsc-alias",
+    "build:exports": "node ./package.setup.mjs",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint \"src/**/*.ts\" --fix --max-warnings 0 --no-warn-ignored",
     "test": "jest",
     "prepare": "husky",
-    "pre-commit-lint": "lint-staged",
-    "demo": "pnpm run build && cd ./demo && pnpm i && pnpm run start"
+    "pre-commit-lint": "lint-staged"
   },
   "files": [
     "/dist"
