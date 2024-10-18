@@ -28,6 +28,3 @@ useAuth({
 [evm](./src/evm/README.md)
 
 [sui](./src/sui/README.md)
-
-[sui/zk](./src/sui/zk/README.md)
-

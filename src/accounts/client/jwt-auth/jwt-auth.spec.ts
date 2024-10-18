@@ -13,7 +13,7 @@ test('Adds jwt Validator', async () => {
       tokenParamKind: 'body',
       tokenParamMask: '#####',
     },
-    profile_fields_mapping: {
+    profileFieldsMapping: {
       email: 'users.0.email',
       name: ['users.0.localId', 'users.0.validSince'],
     },
