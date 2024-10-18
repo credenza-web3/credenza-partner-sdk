@@ -19,6 +19,7 @@ export default [{
         "**/eslint.config.mjs", 
         "**/jest.config.ts",
         "**/jest.setup.spec.ts",
+        "**/package.setup.mjs",
     ],
 }, ...compat.extends("plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"), {
     plugins: {

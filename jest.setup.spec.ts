@@ -8,7 +8,7 @@ beforeAll(() => {
   useDebug(false)
   useEnv('local')
   useAuth({
-    clientId: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
+    clientId: process.env.CLIENT_ID as string,
+    clientSecret: process.env.CLIENT_SECRET as string,
   })
 })
