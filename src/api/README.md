@@ -2,7 +2,7 @@
 
 ## MODULES
 
-[api/nfc-id](./rules/README.md)
+[api/nfc-id](./nfc-id/README.md)
 
 [api/passport-id](./passport-id/README.md)
 
