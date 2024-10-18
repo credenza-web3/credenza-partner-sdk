@@ -11,7 +11,6 @@ function generateExports(dir, exportPath) {
 
   fs.readdirSync(dir, { withFileTypes: true }).forEach(dirent => {
     const fullPath = path.join(dir, dirent.name);
-    console.log(fullPath)
     const relativePath = path.relative('.', fullPath);
     const exportKey = exportPath ? `./${exportPath}` : '.';
 
@@ -20,8 +19,8 @@ function generateExports(dir, exportPath) {
     } else if (dirent.isFile() && dirent.name === 'index.js') {
       exportsUpd[exportKey] = {
         "import": `./${relativePath}`,
-        "require": `./${relativePath}`,
-        "types": `./${relativePath.replace('.js', '.d.ts')}`,
+        "require": `./${relativePath.replace('/esm/', '/cjs/')}`,
+        "types": `./${relativePath.replace('/esm/','/types/').replace('.js', '.d.ts')}`,
       };
     }
   });
