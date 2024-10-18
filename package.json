@@ -1,6 +1,6 @@
 {
   "name": "@credenza3/partner-sdk",
-  "version": "0.0.2-alpha.3",
+  "version": "0.0.2-alpha.4",
   "description": "Credenza partner sdk",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
