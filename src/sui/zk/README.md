@@ -1,9 +1,5 @@
 # @credenza3/partner-sdk/sui/zk
 
-## USAGE
+## MODULES
 
-```
-import { getSuiAddress } from '@credenza3/partner-sdk/sui/zk'
-
-const { address } = await getSuiZkAddress(sub: string)
-```
+[sui/zk/account](./account/README.md)

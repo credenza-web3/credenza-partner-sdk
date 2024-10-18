@@ -2,6 +2,6 @@
 
 ## MODULES
 
-[evm/accounts](./account/README.md)
+[evm/account](./account/README.md)
 
 [evm/contract](./contract/README.md)

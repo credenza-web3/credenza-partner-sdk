@@ -8,7 +8,7 @@ import {
   findEvmContracts,
   deployEvmContract,
   sendEvmMetaTransaction
-} from '@credenza3/partner-sdk/evm'
+} from '@credenza3/partner-sdk/evm/contract'
 
 const arr = await getAvailableEvmContracts()
 
