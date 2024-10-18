@@ -1,17 +1,9 @@
 # @credenza3/partner-sdk/accounts
 
-## USAGE
+## MODULES
 
-#### Accounts
-```
-import { requestPassportIdSignature } from '@credenza3/partner-sdk/accounts'
+[accounts/client](./client/README.md)
 
-const acc = await getAccountInfo(sub: string)
-```
+[accounts/oauth](./oauth/README.md)
 
-#### Client
-```
-import { getCurrentClientInfo } from '@credenza3/partner-sdk/accounts'
-
-const client = await getCurrentClientInfo()
-```
+[accounts/user](./user/README.md)
