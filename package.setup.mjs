@@ -18,6 +18,7 @@ function generateExports(dir, exportPath) {
       exportsUpd[exportKey] = {
         "import": `./${relativePath}`,
         "require": `./${relativePath}`,
+        "node": `./${relativePath}`,
         "types": `./${relativePath.replace('.js', '.d.ts')}`,
       };
     }

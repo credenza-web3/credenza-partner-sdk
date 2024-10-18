@@ -6,11 +6,17 @@
     "outDir": "./dist",
     "moduleResolution": "NodeNext",
     "types": ["jest", "node"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
     "paths": {
       "@/*": ["./src/*"],
+      "@credenza3/partner-sdk/*": ["./dist/*"]
     }
   },
   "include": [
     "src/**/*",
   ],
+  "exclude": ["node_modules", "dist"]
 }

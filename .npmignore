@@ -9,4 +9,3 @@
 .ncurc.json
 !src/**/*.md
 src
-demo
