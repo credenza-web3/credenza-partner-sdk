@@ -1,3 +1,3 @@
 export * from './sui'
-export * from './account'
+export * as account from './account'
 export * as zk from './zk'

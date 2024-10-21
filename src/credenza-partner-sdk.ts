@@ -13,3 +13,8 @@ export function useEnv(sdkEnv: TSdkEnv): void {
 export function useDebug(enableDebug: boolean) {
   enableSdkDebug(enableDebug)
 }
+
+export * as accounts from './accounts'
+export * as api from './api'
+export * as evm from './evm'
+export * as sui from './sui'

@@ -1,3 +1,3 @@
 export * from './evm'
-export * from './account'
-export * from './contract'
+export * as account from './account'
+export * as contract from './contract'
