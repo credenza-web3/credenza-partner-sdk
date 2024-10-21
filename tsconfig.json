@@ -4,8 +4,6 @@
     "module": "ESNext",
     "moduleResolution": "node",
     "declaration": true,
-    "declarationDir": "./dist/types",
-    "outDir": "./dist/esm",
     "types": ["jest", "node"],
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -15,10 +13,6 @@
     "paths": {
       "@/*": ["./src/*"],
     }
-  },
-  "tsc-alias": {
-    "resolveFullPaths": true,
-    "verbose": true
   },
   "include": [
     "src/**/*",
