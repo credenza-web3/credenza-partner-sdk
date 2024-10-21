@@ -1,16 +1,13 @@
-# @credenza3/partner-sdk/api/promo/rules
+# api/promo/rules
 
 ## USAGE
 
 ```
 import { 
-  addPromoRule, 
-  updatePromoRule, 
-  removePromoRule, 
-  getPromoRules,
-} from '@credenza3/partner-sdk/api/promo/rules'
+  api
+} from '@credenza3/partner-sdk'
 
-const result = await addPromoRule({
+const result = await api.promo.rules.addPromoRule({
   title: string
   description: string
   resourceId: string
@@ -20,7 +17,7 @@ const result = await addPromoRule({
   value: unknown
 })
 
-const result = await updatePromoRule(id: string, {
+const result = await api.promo.rules.updatePromoRule(id: string, {
   title?: string
   description?: string
   resourceId?: string
@@ -30,7 +27,7 @@ const result = await updatePromoRule(id: string, {
   value?: unknown
 })
 
-const result = await getPromoRules(id: string)
+const result = await api.promo.rules.getPromoRules(id: string)
 
-const result = await removePromoRule(id: string)
+const result = await api.promo.rules.removePromoRule(id: string)
 ```
