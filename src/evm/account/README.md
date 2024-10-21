@@ -1,9 +1,9 @@
-# @credenza3/partner-sdk/evm/account
+# evm/account
 
 ## USAGE
 
 ```
-import { getEvmAddress } from '@credenza3/partner-sdk/evm/account'
+import { evm } from '@credenza3/partner-sdk'
 
-const { address } = await getEvmAddress(sub: string)
+const { address } = await evm.account.getEvmAddress(sub: string)
 ```
