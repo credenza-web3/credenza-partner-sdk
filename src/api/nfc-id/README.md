@@ -1,22 +1,22 @@
-# @credenza3/partner-sdk/api/nfc-id
+# api/nfc-id
 
 ## USAGE
 
 ```
-import { addNfcId, removeNfcId, updateNfcId, getNfcId } from '@credenza3/partner-sdk/api/nfc-id'
+import { api } from '@credenza3/partner-sdk'
 
-const result = await addNfcId({
+const result = await api.addNfcId({
   sub: string
   serialNumber: string
   text?: string
 })
 
-const result = await updateNfcId(sub: string, {
+const result = await api.updateNfcId(sub: string, {
   serialNumber?: string
   text?: string
 })
 
-const result = await getNfcId(sub: string)
+const result = await api.getNfcId(sub: string)
 
-const result = await removeNfcId(sub: string)
+const result = await api.removeNfcId(sub: string)
 ```

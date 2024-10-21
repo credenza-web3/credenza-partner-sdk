@@ -1,9 +1,9 @@
-# @credenza3/partner-sdk/sui/account
+# sui/account
 
 ## USAGE
 
 ```
-import { getSuiAddress } from '@credenza3/partner-sdk/sui/account'
+import { sui } from '@credenza3/partner-sdk'
 
-const { address } = await getSuiAddress(sub: string)
+const { address } = await sui.account.getSuiAddress(sub: string)
 ```

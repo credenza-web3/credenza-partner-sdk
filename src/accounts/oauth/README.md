@@ -1,15 +1,15 @@
-# @credenza3/partner-sdk/accounts/oauth
+# accounts/oauth
 
 ## USAGE
 
 ```
-import { exchangeCodeForToken, refreshToken } from '@credenza3/partner-sdk/accounts/oauth'
+import { accounts } from '@credenza3/partner-sdk'
 
-const result = await exchangeCodeForToken({
+const result = await accounts.oauth.exchangeCodeForToken({
   code: string,
   codeVerifier: string,
   redirectUri: string | null,
 })
 
-const result = await refreshToken(refreshTokenValue: string)
+const result = await accounts.oauth.refreshToken(refreshTokenValue: string)
 ```

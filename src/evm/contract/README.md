@@ -4,22 +4,19 @@
 
 ```
 import { 
-  getAvailableEvmContracts,
-  findEvmContracts,
-  deployEvmContract,
-  sendEvmMetaTransaction
-} from '@credenza3/partner-sdk/evm/contract'
+  evm
+} from '@credenza3/partner-sdk'
 
-const arr = await getAvailableEvmContracts()
+const arr = await evm.contract.getAvailableEvmContracts()
 
-const result = await deployEvmContract(name: string, chainId: number, ownerAddresses: string[])
+const result = await evm.contract.deployEvmContract(name: string, chainId: number, ownerAddresses: string[])
 
-const arr = await findEvmContracts({
+const arr = await evm.contract.findEvmContracts({
   name?: string
   type?: string
   chainId?: string
 })
 
-const tx = await sendEvmMetaTransaction(unsignedSerializedMetaTx: string)
+const tx = await evm.contract.sendEvmMetaTransaction(unsignedSerializedMetaTx: string)
 
 ```

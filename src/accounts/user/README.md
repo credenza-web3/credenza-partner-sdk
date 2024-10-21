@@ -1,9 +1,9 @@
-# @credenza3/partner-sdk/accounts/user
+# accounts/user
 
 ## USAGE
 
 ```
-import { getAccountInfo } from '@credenza3/partner-sdk/accounts/user'
+import { accounts } from '@credenza3/partner-sdk'
 
-const acc = await getAccountInfo(sub: string)
+const acc = await accounts.user.getAccountInfo(sub: string)
 ```

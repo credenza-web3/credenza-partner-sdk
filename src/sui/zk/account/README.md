@@ -3,7 +3,7 @@
 ## USAGE
 
 ```
-import { getSuiZkAddress } from '@credenza3/partner-sdk/sui/zk/account'
+import { sui } from '@credenza3/partner-sdk'
 
-const { address } = await getSuiZkAddress(sub: string)
+const { address } = await sui.zk.account.getSuiZkAddress(sub: string)
 ```

@@ -1,11 +1,11 @@
-# @credenza3/partner-sdk/accounts/client
+# accounts/client
 
 ## USAGE
 
 ```
-import { getCurrentClientInfo } from '@credenza3/partner-sdk/accounts/client'
+import { accounts } from '@credenza3/partner-sdk'
 
-const client = await getCurrentClientInfo()
+const client = await accounts.client.getCurrentClientInfo()
 ```
 
 ## MODULES

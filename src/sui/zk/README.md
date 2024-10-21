@@ -1,4 +1,4 @@
-# @credenza3/partner-sdk/sui/zk
+# sui/zk
 
 ## MODULES
 

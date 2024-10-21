@@ -1,16 +1,11 @@
-# @credenza3/partner-sdk/accounts/client/jwt-auth
+# accounts/client/jwt-auth
 
 ## USAGE
 
 ```
-import { 
-  addJwtValidator, 
-  updateJwtValidator, 
-  removeJwtValidator, 
-  getJwtValidators
-} from '@credenza3/partner-sdk/accounts/client/jwt-auth'
+import { accounts } from '@credenza3/partner-sdk'
 
-const result = await addJwtValidator({
+const result = await accounts.client.jwtAuth.addJwtValidator({
   validationFields: string[]
   jwksUrl?: string
   userinfoRequestConfig?: {

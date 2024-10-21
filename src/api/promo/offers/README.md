@@ -1,18 +1,13 @@
-# @credenza3/partner-sdk/api/promo/offers
+# api/promo/offers
 
 ## USAGE
 
 ```
 import { 
-  addPromoOffer, 
-  updatePromoOffer, 
-  removePromoOffer, 
-  getPromoOffers,
-  checkPromoOffer,
-  getPromoOfferRss
-} from '@credenza3/partner-sdk/api/promo/offers'
+  api
+} from '@credenza3/partner-sdk'
 
-const result = await addPromoOffer({
+const result = await api.promo.offers.addPromoOffer({
   title: string
   description: string
   includeRules: string[]
@@ -20,7 +15,7 @@ const result = await addPromoOffer({
   code: string
 })
 
-const result = await updatePromoOffer(id: string, {
+const result = await api.promo.offers.updatePromoOffer(id: string, {
   title?: string
   description?: string
   includeRules?: string[]
@@ -28,14 +23,14 @@ const result = await updatePromoOffer(id: string, {
   code?: string
 })
 
-const result = await getPromoOffers(id: string)
+const result = await api.promo.offers.getPromoOffers(id: string)
 
-const result = await checkPromoOffer(id: string, sub: string)
+const result = await api.promo.offers.checkPromoOffer(id: string, sub: string)
 
-const result = await getPromoOfferRss({
+const result = await api.promo.offers.getPromoOfferRss({
   suiAddress?: string,
   evmAddress?: string
 })
 
-const result = await removePromoOffer(id: string)
+const result = await api.promo.offers.removePromoOffer(id: string)
 ```
