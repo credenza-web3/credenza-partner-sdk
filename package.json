@@ -1,6 +1,6 @@
 {
   "name": "@credenza3/partner-sdk",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0",
   "description": "Credenza partner sdk",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -12,7 +12,6 @@
   "author": "Credenza (Dmytro Fokin)",
   "scripts": {
     "build": "tsup",
-    "build:exports": "node ./package.setup.mjs",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint \"src/**/*.ts\" --fix --max-warnings 0 --no-warn-ignored",
     "test": "jest",

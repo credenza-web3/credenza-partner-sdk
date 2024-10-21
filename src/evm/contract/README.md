@@ -1,4 +1,4 @@
-# @credenza3/partner-sdk/evm/contract
+# evm/contract
 
 ## USAGE
 

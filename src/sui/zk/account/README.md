@@ -1,4 +1,4 @@
-# @credenza3/partner-sdk/sui/zk/account
+# sui/zk/account
 
 ## USAGE
 
