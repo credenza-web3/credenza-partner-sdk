@@ -17,6 +17,6 @@ const arr = await evm.contract.findEvmContracts({
   chainId?: string
 })
 
-const tx = await evm.contract.sendEvmMetaTransaction(unsignedSerializedMetaTx: string)
+const tx = await evm.contract.sendEvmMetaTransaction(unsignedSerializedMetaTx: string, senderAddress: string)
 
 ```
