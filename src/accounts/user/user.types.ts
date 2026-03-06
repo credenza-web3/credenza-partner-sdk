@@ -6,3 +6,8 @@ export type TOAuthAccountInfo = {
   email?: string
   phone?: string
 }
+
+export type TGetAccountInfoByContactParams = {
+  email?: string
+  phone?: string
+}
