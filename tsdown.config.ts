@@ -7,4 +7,5 @@ export default defineConfig({
   dts: true,
   clean: true,
   target: 'es6',
+  outExtensions: () => ({ dts: '.d.ts' }),
 })
