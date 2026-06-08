@@ -14,6 +14,7 @@ export async function getAccountInfo(sub: string): Promise<TOAuthAccountInfo> {
   })
   const json = await response.json()
   log(getAccountInfo.name, json)
+  if (!response.ok) throw new Error(json.message)
   return toCamelCase(json) as TOAuthAccountInfo
 }
 
@@ -29,5 +30,6 @@ export async function getAccountInfoByContact(args: TGetAccountInfoByContactPara
   })
   const json = await response.json()
   log(getAccountInfoByContact.name, json)
+  if (!response.ok) throw new Error(json.message)
   return toCamelCase(json) as TOAuthAccountInfo
 }

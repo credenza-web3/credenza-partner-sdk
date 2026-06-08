@@ -18,9 +18,10 @@ export async function signSponsoredTransaction(txBytes: Uint8Array): Promise<{
     }),
   })
   const json = await response.json()
+  log(signSponsoredTransaction.name, json)
+  if (!response.ok) throw new Error(json.message)
   if (!Array.isArray(json.signature)) {
     json.signature = [json.signature]
   }
-  log(signSponsoredTransaction.name, json)
   return json
 }

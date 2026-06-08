@@ -15,6 +15,7 @@ export async function addPromoRule(params: TCreateRuleParams): Promise<TRule> {
   })
   const json = await response.json()
   log(addPromoRule.name, json)
+  if (!response.ok) throw new Error(json.message)
   return toCamelCase(json) as TRule
 }
 
@@ -29,6 +30,7 @@ export async function updatePromoRule(id: string, params: TUpdateRuleParams): Pr
   })
   const json = await response.json()
   log(updatePromoRule.name, json)
+  if (!response.ok) throw new Error(json.message)
   return toCamelCase(json) as TRule
 }
 
@@ -42,6 +44,7 @@ export async function removePromoRule(id: string): Promise<boolean> {
   })
   const json = await response.json()
   log(removePromoRule.name, json)
+  if (!response.ok) throw new Error(json.message)
   return response.ok
 }
 
@@ -54,5 +57,6 @@ export async function getPromoRules(): Promise<TRule[]> {
   })
   const json = await response.json()
   log(getPromoRules.name, json)
+  if (!response.ok) throw new Error(json.message)
   return toCamelCase(json) as TRule[]
 }

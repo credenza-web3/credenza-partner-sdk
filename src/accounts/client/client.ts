@@ -22,6 +22,7 @@ export async function getCurrentClientInfo(): Promise<{
   })
   const json = await response.json()
   log(getCurrentClientInfo.name, json)
+  if (!response.ok) throw new Error(json.message)
   return {
     id: json._id,
     name: json.name,

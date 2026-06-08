@@ -11,5 +11,6 @@ export async function getEvmAddress(sub: string): Promise<{ address: string }> {
   })
   const json = await response.json()
   log(getEvmAddress.name, json)
+  if (!response.ok) throw new Error(json.message)
   return json
 }

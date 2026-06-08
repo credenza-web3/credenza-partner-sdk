@@ -15,6 +15,7 @@ export async function addPromoOffer(params: TCreateOfferParams): Promise<TOffer>
   })
   const json = await response.json()
   log(addPromoOffer.name, json)
+  if (!response.ok) throw new Error(json.message)
   return toCamelCase(json) as TOffer
 }
 
@@ -29,6 +30,7 @@ export async function updatePromoOffer(id: string, params: TUpdateOfferParams): 
   })
   const json = await response.json()
   log(updatePromoOffer.name, json)
+  if (!response.ok) throw new Error(json.message)
   return toCamelCase(json) as TOffer
 }
 
@@ -42,6 +44,7 @@ export async function removePromoOffer(id: string): Promise<boolean> {
   })
   const json = await response.json()
   log(removePromoOffer.name, json)
+  if (!response.ok) throw new Error(json.message)
   return response.ok
 }
 
@@ -54,6 +57,7 @@ export async function getPromoOffers(): Promise<TOffer[]> {
   })
   const json = await response.json()
   log(getPromoOffers.name, json)
+  if (!response.ok) throw new Error(json.message)
   return toCamelCase(json) as TOffer[]
 }
 
@@ -66,6 +70,7 @@ export async function checkPromoOffer(id: string, sub: string): Promise<boolean>
   })
   const json = await response.json()
   log(checkPromoOffer.name, json)
+  if (!response.ok) throw new Error(json.message)
   return json
 }
 
@@ -86,5 +91,6 @@ export async function getPromoOfferRss(params: { suiAddress?: string; evmAddress
   })
   const json = await response.json()
   log(getPromoOfferRss.name, json)
+  if (!response.ok) throw new Error(json.message)
   return toCamelCase(json) as TOfferRss[]
 }

@@ -11,5 +11,6 @@ export async function getSuiZkAddress(sub: string): Promise<{ address: string }>
   })
   const json = await response.json()
   log(getSuiZkAddress.name, json)
+  if (!response.ok) throw new Error(json.message)
   return json
 }

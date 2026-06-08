@@ -21,6 +21,7 @@ export async function exchangeCodeForToken(params: TExchangeTokenParams): Promis
   })
   const json = await response.json()
   log(exchangeCodeForToken.name, json)
+  if (!response.ok) throw new Error(json.message)
   return toCamelCase(json) as TTokenResponse
 }
 
@@ -38,5 +39,6 @@ export async function refreshToken(refreshTokenValue: string): Promise<TTokenRes
   })
   const json = await response.json()
   log(refreshToken.name, json)
+  if (!response.ok) throw new Error(json.message)
   return toCamelCase(json) as TTokenResponse
 }

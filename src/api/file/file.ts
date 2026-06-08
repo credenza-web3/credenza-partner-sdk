@@ -19,5 +19,6 @@ export async function uploadFile(file: File): Promise<{
   })
   const json = await response.json()
   log(uploadFile.name, json)
+  if (!response.ok) throw new Error(json.message)
   return json
 }

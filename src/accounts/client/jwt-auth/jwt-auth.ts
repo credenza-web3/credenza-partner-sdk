@@ -15,6 +15,7 @@ export async function addJwtValidator(params: TJwtAuthValidatorParams): Promise<
   })
   const json = await response.json()
   log(addJwtValidator.name, json)
+  if (!response.ok) throw new Error(json.message)
   return toCamelCase(json) as TJwtAuthValidator
 }
 
@@ -32,6 +33,7 @@ export async function updateJwtValidator(
   })
   const json = await response.json()
   log(updateJwtValidator.name, json)
+  if (!response.ok) throw new Error(json.message)
   return toCamelCase(json) as TJwtAuthValidator
 }
 
@@ -45,6 +47,7 @@ export async function removeJwtValidator(id: string): Promise<boolean> {
   })
   const json = await response.json()
   log(removeJwtValidator.name, json)
+  if (!response.ok) throw new Error(json.message)
   return json
 }
 
@@ -57,5 +60,6 @@ export async function getJwtValidators(): Promise<TJwtAuthValidator[]> {
   })
   const json = await response.json()
   log(getJwtValidators.name, json)
+  if (!response.ok) throw new Error(json.message)
   return toCamelCase(json) as TJwtAuthValidator[]
 }

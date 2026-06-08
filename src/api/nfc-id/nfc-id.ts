@@ -18,6 +18,7 @@ export async function addNfcId(params: TNfcId): Promise<TNfcId> {
   })
   const json = await response.json()
   log(addNfcId.name, json)
+  if (!response.ok) throw new Error(json.message)
   return {
     sub: json.sub,
     serialNumber: json.serial_number,
