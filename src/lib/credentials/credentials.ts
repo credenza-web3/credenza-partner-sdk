@@ -2,7 +2,7 @@ import { Buffer } from 'buffer'
 
 import { TCredentials } from './credentials.types'
 
-let credentials: TCredentials = null
+let credentials: TCredentials | null = null
 
 export function setCredentials(credentialsInput: TCredentials): void {
   if (!credentialsInput.clientId) throw new Error('"clientId" is required')

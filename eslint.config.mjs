@@ -19,7 +19,7 @@ export default [{
         "**/eslint.config.mjs", 
         "**/jest.config.ts",
         "**/jest.setup.ts",
-        "**/tsup.config.ts",
+        "**/tsdown.config.ts",
     ],
 }, ...compat.extends("plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"), {
     plugins: {
@@ -64,4 +64,4 @@ export default [{
             varsIgnorePattern: "^_",
         }],
     },
-}];
+  }];
