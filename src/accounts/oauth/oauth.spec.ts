@@ -42,7 +42,7 @@ beforeAll(async () => {
     .replace(/=+$/, '')
 
   const url = new URL(`${getOAuthApiUrl()}/oauth2/authorize/jwt`)
-  url.searchParams.append('client_id', process.env.CLIENT_ID)
+  url.searchParams.append('client_id', process.env.CLIENT_ID!)
   url.searchParams.append('response_type', 'code')
   url.searchParams.append('scope', 'openid profile offline.access')
   url.searchParams.append('state', 'state')
@@ -78,7 +78,7 @@ test('Exchanges Auth code for token', async () => {
   expect(result.idToken).toBeTruthy()
   expect(result.refreshToken).toBeTruthy()
   expect(result.accessToken).toBeTruthy()
-  refreshTokenValue = result.refreshToken
+  refreshTokenValue = result.refreshToken!
 })
 
 test('Exchanges Refresh token', async () => {

@@ -3,6 +3,8 @@ import { getEvmApiUrl } from '@/evm'
 import { log } from '@/lib/logging'
 import { getWsConnection } from '@/evm'
 
+import type { TEvmContractRecord, TDeployEvmContractData, TSendMetaTxData } from './contract.types'
+
 export async function getAvailableEvmContracts(): Promise<string[]> {
   const response = await fetch(`${getEvmApiUrl()}/contracts/available`, {
     headers: {
@@ -32,7 +34,7 @@ export async function findEvmContracts(
   const json = await response.json()
   log(findEvmContracts.name, json)
   if (!response.ok) throw new Error(json.message)
-  return json.map((contract) => {
+  return json.map((contract: TEvmContractRecord) => {
     return {
       id: contract._id,
       type: contract.type,
@@ -57,7 +59,7 @@ export async function deployEvmContract(name: string, chainId: number, ownerAddr
       {
         payload: { name, chain_id: chainId, owner_addresses: ownerAddresses },
       },
-      (data) => {
+      (data: TDeployEvmContractData) => {
         if (data.error) {
           return reject(new Error(data.error.message))
         }
@@ -90,7 +92,7 @@ export async function sendEvmMetaTransaction(unsignedSerializedMetaTx: string, a
           unsigned_serialized_meta_tx: unsignedSerializedMetaTx,
         },
       },
-      (data) => {
+      (data: TSendMetaTxData) => {
         if (data.error) {
           return reject(new Error(data.error.message))
         }

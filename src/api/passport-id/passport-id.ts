@@ -1,13 +1,15 @@
 import { getWsConnection } from '@/api'
 import { log } from '@/lib/logging'
 
+import type { TPassportIdSignedData, TPassportIdRequestData } from './passport-id.types'
+
 export async function requestPassportIdSignature(sub: string, message: string): Promise<{ signature: string }> {
   if (!sub) throw new Error('"Sub is required"')
   if (!message) throw new Error('"Message is required"')
 
   const socket = await getWsConnection()
   return new Promise((resolve, reject) => {
-    socket.once(`passport_id/signed/${sub}`, (data) => {
+    socket.once(`passport_id/signed/${sub}`, (data: TPassportIdSignedData) => {
       log(requestPassportIdSignature.name, 'Received', data)
       resolve(data.payload)
     })
@@ -16,7 +18,7 @@ export async function requestPassportIdSignature(sub: string, message: string): 
       {
         payload: { sub, message },
       },
-      (data) => {
+      (data: TPassportIdRequestData) => {
         if (!data.payload.ok) {
           reject(new Error('Failed to sign message'))
         }

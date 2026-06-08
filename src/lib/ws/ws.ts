@@ -3,11 +3,11 @@ import { io, Socket } from 'socket.io-client'
 
 const socketPromises = new Map<string, Promise<{ socket: Socket; auth: TCredentials }>>()
 
-export async function disconnectWs(url: string = null) {
+export async function disconnectWs(url?: string) {
   const socketUrls = url ? [url] : Array.from(socketPromises.keys())
   for (const url of socketUrls) {
     if (!socketPromises.has(url)) continue
-    const { socket } = await socketPromises.get(url)
+    const { socket } = await socketPromises.get(url)!
     socket?.disconnect()
     socketPromises.delete(url)
   }
@@ -30,7 +30,7 @@ export async function connectToWs(url: string): Promise<Socket> {
     socketPromises.set(url, promise)
   }
 
-  const { socket, auth } = await socketPromises.get(url)
+  const { socket, auth } = await socketPromises.get(url)!
   if (!socket?.connected || auth.clientId !== credentials.clientId || auth.clientSecret !== credentials.clientSecret) {
     await disconnectWs(url)
     return connectToWs(url)
