@@ -5,6 +5,24 @@ import { toCamelCase } from '@/lib/obj'
 
 import type { TOAuthAccountInfo, TGetAccountInfoByContactParams } from './user.types'
 
+export async function setAccountClientMetadata(
+  sub: string,
+  metadata: Record<string, unknown>,
+): Promise<TOAuthAccountInfo> {
+  const response = await fetch(`${getOAuthApiUrl()}/accounts/${sub}`, {
+    method: 'PATCH',
+    body: JSON.stringify({ client_metadata: metadata }),
+    headers: {
+      Authorization: getBasicToken(),
+      'Content-Type': 'application/json',
+    },
+  })
+  const json = await response.json()
+  log(getAccountInfo.name, json)
+  if (!response.ok) throw new Error(json.message)
+  return toCamelCase(json) as TOAuthAccountInfo
+}
+
 export async function getAccountInfo(sub: string): Promise<TOAuthAccountInfo> {
   const response = await fetch(`${getOAuthApiUrl()}/accounts/${sub}`, {
     headers: {
