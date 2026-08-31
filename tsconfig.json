@@ -4,17 +4,15 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "declaration": true,
-    "types": ["jest", "node"],
+    "types": ["node", "vitest/globals"],
     "esModuleInterop": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "src/**/*",
-  ],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
