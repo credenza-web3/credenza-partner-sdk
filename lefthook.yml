@@ -1,0 +1,10 @@
+pre-commit:
+  commands:
+    format:
+      glob: '*.{js,mjs,ts,json,jsonc,yaml,yml,md}'
+      run: pnpm exec oxfmt --no-error-on-unmatched-pattern {staged_files}
+      stage_fixed: true
+    lint:
+      glob: '*.{js,mjs,ts}'
+      run: pnpm exec oxlint --type-aware --fix --deny-warnings {staged_files}
+      stage_fixed: true

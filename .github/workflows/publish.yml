@@ -19,14 +19,14 @@ jobs:
       matrix:
         node-version: [24]
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: https://registry.npmjs.org
           scope: '@credenza3'
-      - uses: pnpm/action-setup@v4 
+      - uses: pnpm/action-setup@v6 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       #- name: Tests

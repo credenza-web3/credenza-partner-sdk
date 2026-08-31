@@ -1,10 +1,9 @@
 .husky
 .github
 .well-known
-.eslintignore
-.eslintrc.js
-.lintstagedrc.json
-.prettierrc.json
+.oxfmt*
+.oxlintrc.json
+lefthook.yml
 .nvmrc
 .ncurc.json
 !src/**/*.md
