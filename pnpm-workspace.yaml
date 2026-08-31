@@ -2,4 +2,5 @@ packages:
   - '.'
 allowBuilds:
   '@parcel/watcher': true
+  lefthook: true
   unrs-resolver: false

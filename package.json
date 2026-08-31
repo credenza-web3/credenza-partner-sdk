@@ -12,11 +12,11 @@
   "author": "Credenza",
   "scripts": {
     "build": "tsdown",
-    "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "eslint \"src/**/*.ts\" --fix --max-warnings 0 --no-warn-ignored",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
+    "lint": "oxlint --type-aware --fix --deny-warnings src",
     "test": "jest",
-    "prepare": "husky",
-    "pre-commit-lint": "lint-staged"
+    "prepare": "lefthook install"
   },
   "files": [
     "dist"
@@ -26,21 +26,13 @@
     "socket.io-client": "^4.8.3"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.6",
-    "@eslint/js": "^10.0.1",
     "@types/jest": "^30.0.0",
     "@types/node": "^26.4.0",
-    "@typescript-eslint/eslint-plugin": "^8.68.0",
-    "@typescript-eslint/parser": "^8.68.0",
     "dotenv": "^17.4.2",
-    "eslint": "10.9.1",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.6",
-    "globals": "^17.11.0",
-    "husky": "^9.1.7",
     "jest": "^30.5.0",
-    "lint-staged": "^17.4.1",
-    "prettier": "^3.9.6",
+    "lefthook": "^1.11.13",
+    "oxfmt": "^0.65.0",
+    "oxlint": "^1.80.0",
     "ts-jest": "^29.4.12",
     "ts-node": "^10.9.2",
     "tsdown": "^0.22.14",
